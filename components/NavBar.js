@@ -17,7 +17,23 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
-//import SimpleList from './SideBar' ;
+import SimpleList from './SideBar' ;
+import Link from 'next/Link';
+
+class MyLink extends React.Component {
+  render() {
+    const { style, href, hrefAs, children, prefetch } = this.props
+    return (
+      <div style={style}>
+        <Link href={href} as={hrefAs} prefetch>
+          <a>
+            {children}
+          </a>
+        </Link>
+      </div>
+    )
+  }
+}
 
 const drawerWidth = 240;
 
@@ -129,16 +145,18 @@ export default function PersistentDrawerLeft() {
         </div>
         <Divider />
         <List>
-          {['Dashboard', 'Project', 'Contract Delay', 'More'].map((text, index) => (
+          {['Dashboard', 'Admin', 'Contract_Delay'].map((text, index) => (
             <ListItem button key={text}>
+             <MyLink href={text}>
               <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
               <ListItemText primary={text} />
+              </MyLink>
             </ListItem>
           ))}
         </List>
         <Divider />
         <List>
-          {['Mail', 'Account', 'Tools'].map((text, index) => (
+          {['Project', 'Contract Delay', 'Tools'].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
               <ListItemText primary={text} />

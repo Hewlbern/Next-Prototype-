@@ -3,7 +3,6 @@ import Head from "next/head";
 
 import Header from "./Header";
 import NavBar from "./NavBar";
-import Drawer from "./Drawer";
 
 const Layout = props => (
   <div >

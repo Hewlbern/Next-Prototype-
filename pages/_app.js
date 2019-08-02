@@ -3,6 +3,8 @@ import App, { Container } from "next/app";
 import Head from "next/head";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
+import Layout from '../components/Layout';
+
 export default class BlogApp extends App {
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
@@ -32,7 +34,9 @@ export default class BlogApp extends App {
       <Container>
         {this.renderHead()}
         <CssBaseline />
+        <Layout>
         <Component {...pageProps} />
+        </Layout>
       </Container>
     );
   }
