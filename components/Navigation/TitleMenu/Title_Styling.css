@@ -1,0 +1,32 @@
+
+
+/* avatar/man/15 */
+
+position: absolute;
+width: 40px;
+height: 40px;
+left: 16px;
+top: 40px;
+
+
+
+/* mask */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #C4C4C4;
+
+
+/* image */
+
+position: absolute;
+left: -25%;
+right: -25%;
+top: 0%;
+bottom: 0%;
+
+background: url(18.jpg);
